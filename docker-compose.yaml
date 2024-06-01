@@ -14,6 +14,7 @@ services:
     container_name: clickhouse
     hostname: clickhouse
     volumes:
+      - clickhouse_data:/var/lib/clickhouse
       - ./clickhouse/volumes/clickhouse/etc/clickhouse-server/config.d/config.xml:/etc/clickhouse-server/config.d/config.xml
       - ./clickhouse/volumes/clickhouse/etc/clickhouse-server/users.d/users.xml:/etc/clickhouse-server/users.d/users.xml
       - ./clickhouse/volumes/clickhouse/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
@@ -28,3 +29,7 @@ services:
       - ${PWD}/fs/volumes/vector/vector.toml:/etc/vector/vector.toml
     depends_on:
       - clickhouse
+
+volumes:
+  clickhouse_data:
+    driver: local
