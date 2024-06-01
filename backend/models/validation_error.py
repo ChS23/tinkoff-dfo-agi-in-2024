@@ -2,7 +2,7 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from ..models.location_inner import (LocationInner)
+from backend.models.location_inner import (LocationInner)
 
 
 class ValidationError(BaseModel):

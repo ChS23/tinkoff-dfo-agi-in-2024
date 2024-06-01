@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS KnowledgeBase (
+CREATE TABLE IF NOT EXISTS KnowledgeBase256 (
     Id UUID,
     Source String,
     BusinessLineId String,
